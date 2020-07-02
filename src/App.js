@@ -15,9 +15,7 @@ function App() {
     <ThemeProvider theme={lightTheme}>
       <main className="app-container">
         <GlobalStyles />
-        <header>
-          <Logo />
-        </header>
+        <Logo />
         <Heading>
           We are launching <strong>soon!</strong>
         </Heading>
@@ -38,7 +36,9 @@ function App() {
             <ion-icon aria-label="instagram" name="logo-instagram"></ion-icon>
           </button>
         </Footer>
-        <Paragraph> &copy; Copyright Ping. All rights reserved.</Paragraph>
+        <Paragraph style={{ marginBottom: '3.6rem' }}>
+          &copy; Copyright Ping. All rights reserved.
+        </Paragraph>
       </main>
     </ThemeProvider>
   )
