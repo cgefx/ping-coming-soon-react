@@ -1,29 +1,28 @@
 import React from 'react'
-import { StyledInput, StyledFormField, ErrorText } from './styled'
+import { StyledInput, StyledFormField, FeedBackText } from './styled'
 import { emailRegEx } from '../../utils'
+import AppContext from '../../store'
 
 const FormField = () => {
-  const [email, setEmail] = React.useState('')
+  const [{ email, submitted }, dispatch] = React.useContext(AppContext)
 
   const isValid = emailRegEx.test(email)
 
-  const handleChange = (e) => {
-    const { value } = e.target
-    setEmail(value)
+  const handleChange = ({ target: { value } }) => {
+    dispatch({ type: 'change', payload: { name: 'email', value } })
   }
   return (
     <StyledFormField>
       <StyledInput
-        error={!isValid}
+        error={submitted && !isValid}
         value={email}
         onChange={handleChange}
         placeholder="Your email address..."
       />
-      {!isValid && (
-        <ErrorText small error>
-          Please provide a valid email address
-        </ErrorText>
+      {submitted && !isValid && (
+        <FeedBackText error>Please provide a valid email address</FeedBackText>
       )}
+      {submitted && isValid && <FeedBackText>Success!</FeedBackText>}
     </StyledFormField>
   )
 }

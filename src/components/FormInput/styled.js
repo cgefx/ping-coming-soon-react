@@ -29,13 +29,13 @@ export const StyledInput = styled.input`
   }
 `
 
-export const ErrorText = styled.p`
+export const FeedBackText = styled.p`
   font-size: 1.2rem;
   font-style: italic;
   font-weight: 300;
   margin-top: 0.5rem;
   margin-left: 3.2rem;
-  color: ${({ theme, error }) => (error ? theme.error : theme.textSecondary)};
+  color: ${({ theme, error }) => (error ? theme.error : theme.success)};
   @media (min-width: 600px) {
     font-size: 1.4rem;
   }
