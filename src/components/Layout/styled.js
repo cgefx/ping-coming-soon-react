@@ -5,6 +5,6 @@ export const MainWrapper = styled.main`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  max-width: 64rem;
-  padding: 2.4rem;
+  max-width: 90rem;
+  padding: 8rem 2.4rem 6rem;
 `

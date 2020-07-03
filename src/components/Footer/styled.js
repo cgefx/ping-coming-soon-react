@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledFooter = styled.footer`
-  display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
-  margin: 10rem 0 2.8rem;
+  margin: 2.8rem auto;
 `

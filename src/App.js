@@ -27,7 +27,7 @@ function App() {
         <Text>Subscribe and get notified</Text>
         <FlexContainer>
           <FormInput />
-          <Button>Notify Me</Button>
+          <Button label="Notify Me" />
         </FlexContainer>
         <Section>
           <Image source={dashboardImg} altText="Ping-product" />

@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 export const StyledFormField = styled.div`
-  margin-bottom: 1rem;
-
+  margin-bottom: 1.6rem;
   @media (min-width: 600px) {
     width: 65%;
     align-self: flex-start;
+    margin-right: 1.6rem;
   }
 `
 
@@ -26,5 +26,17 @@ export const StyledInput = styled.input`
 
   &:placeholder {
     color: ${({ theme }) => theme.textPrimary};
+  }
+`
+
+export const ErrorText = styled.p`
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  margin-left: 3.2rem;
+  color: ${({ theme, error }) => (error ? theme.error : theme.textSecondary)};
+  @media (min-width: 600px) {
+    font-size: 1.4rem;
   }
 `
