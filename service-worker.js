@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ping-coming-soon-react/precache-manifest.dc41f7ae09c5fa21bd9b5567c8b56750.js"
+  "/ping-coming-soon-react/precache-manifest.227d57841894edbc9747e78c3da8806f.js"
 );
 
 self.addEventListener('message', (event) => {
