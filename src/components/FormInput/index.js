@@ -1,6 +1,7 @@
 import React from 'react'
-import { StyledInput, StyledFormField, SmallText } from './StyledComp'
-import { emailRegEx } from '../utils'
+import { StyledInput, StyledFormField } from './styled'
+import { Text } from '../../components'
+import { emailRegEx } from '../../utils'
 
 const FormField = () => {
   const [email, setEmail] = React.useState('')
@@ -20,7 +21,9 @@ const FormField = () => {
         placeholder="Your email address..."
       />
       {!isValid && (
-        <SmallText error>Please provide a valid email address</SmallText>
+        <Text small error>
+          Please provide a valid email address
+        </Text>
       )}
     </StyledFormField>
   )

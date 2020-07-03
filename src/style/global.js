@@ -24,6 +24,7 @@ const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.textPrimary};
     font-family: 'Libre Franklin', sans-serif;
     text-rendering: optimizeSpeed;
+    line-height: 1.65;
     font-size: 2rem;
   }
 
@@ -34,7 +35,23 @@ const GlobalStyles = createGlobalStyle`
 
   img {
     max-width: 100%;
+    display: block;
   }
+
+  input {
+	border-radius: 0;
+	outline: 0;
+	border: none;
+	background-color: transparent;
+	font-family: inherit;
+
+	&:focus {
+		outline: none;
+	}
+	&::placeholder {
+		color: inherit;
+	}
+}
 
   a {
     text-decoration: none;
