@@ -1,11 +1,12 @@
 import React from 'react'
-import LogoImage from '../images/logo.svg'
+import LogoImage from '../../images/logo.svg'
+import { Wrapper } from './styled'
 
 const Logo = () => {
   return (
-    <header>
+    <Wrapper>
       <img src={LogoImage} alt="Ping Logo" />
-    </header>
+    </Wrapper>
   )
 }
 

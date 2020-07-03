@@ -1,45 +1,49 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import dashboardImg from './images/illustration-dashboard.png'
 import { GlobalStyles, lightTheme } from './style'
-import { Logo, FormField, Dashboard } from './components'
 import {
+  Button,
+  FlexContainer,
   Footer,
+  FormInput,
   Heading,
-  Paragraph,
-  FlexBox,
-  StyledButton,
-} from './components/StyledComp'
+  Image,
+  Layout,
+  Logo,
+  Section,
+  Text,
+} from './components'
+import { Provider } from './store'
+import reducer, { initialState } from './reducer'
 
 function App() {
+  const [state, dispatch] = React.useReducer(reducer, initialState)
+
+  function handleSubmit() {
+    dispatch({ type: 'change', payload: { name: 'submitted', value: true } })
+  }
+
   return (
     <ThemeProvider theme={lightTheme}>
-      <main className="app-container">
-        <GlobalStyles />
-        <Logo />
-        <Heading>
-          We are launching <strong>soon!</strong>
-        </Heading>
-        <Paragraph>Subscribe and get notified</Paragraph>
-        <FlexBox>
-          <FormField />
-          <StyledButton>Notify Me</StyledButton>
-        </FlexBox>
-        <Dashboard />
-        <Footer>
-          <button>
-            <ion-icon aria-label="facebook" name="logo-facebook"></ion-icon>
-          </button>
-          <button>
-            <ion-icon aria-label="twitter" name="logo-twitter"></ion-icon>
-          </button>
-          <button>
-            <ion-icon aria-label="instagram" name="logo-instagram"></ion-icon>
-          </button>
-        </Footer>
-        <Paragraph style={{ marginBottom: '3.6rem' }}>
-          &copy; Copyright Ping. All rights reserved.
-        </Paragraph>
-      </main>
+      <Provider value={[state, dispatch]}>
+        <Layout>
+          <GlobalStyles />
+          <Logo />
+          <Heading>
+            We are launching <strong>soon!</strong>
+          </Heading>
+          <Text>Subscribe and get notified</Text>
+          <FlexContainer>
+            <FormInput />
+            <Button onClick={handleSubmit} label="Notify Me" />
+          </FlexContainer>
+          <Section>
+            <Image source={dashboardImg} altText="Ping-product" />
+          </Section>
+          <Footer />
+        </Layout>
+      </Provider>
     </ThemeProvider>
   )
 }
